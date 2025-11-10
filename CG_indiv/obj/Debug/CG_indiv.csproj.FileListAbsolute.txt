@@ -1,0 +1,10 @@
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\bin\Debug\CG_indiv.exe.config
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\bin\Debug\CG_indiv.exe
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\bin\Debug\CG_indiv.pdb
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\obj\Debug\CG_indiv.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\obj\Debug\CG_indiv.Form1.resources
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\obj\Debug\CG_indiv.Properties.Resources.resources
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\obj\Debug\CG_indiv.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\obj\Debug\CG_indiv.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\obj\Debug\CG_indiv.exe
+C:\Users\HP\Desktop\CG_indiv\CG_indiv\obj\Debug\CG_indiv.pdb
