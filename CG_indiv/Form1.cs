@@ -128,7 +128,7 @@ namespace CG_indiv
             }
 
             // 3. Сортированные точки (серые), кроме p0
-            if (sortedPoints.Count > 0 && stepIndex == -1) // до запуска — показываем порядок
+            if (sortedPoints.Count > 0 ) // до запуска — показываем порядок
             {
                 var p0 = sortedPoints[0];
                 g.FillEllipse(Brushes.Blue, p0.X - 5, p0.Y - 5, 10, 10); // стартовая — синяя
@@ -154,7 +154,7 @@ namespace CG_indiv
 
             try
             {
-                // 1. Выбрать экстремальную точку S0 — самая нижняя (и самая левая при равенстве y)
+                // 1. Выбрать точку S0 — самая нижняя (и самая левая при равенстве y)
                 PointF s0 = points[0];
                 foreach (var p in points)
                 {
@@ -170,7 +170,7 @@ namespace CG_indiv
                     double angleA = Math.Atan2(a.Y - s0.Y, a.X - s0.X);
                     double angleB = Math.Atan2(b.Y - s0.Y, b.X - s0.X);
 
-                    int angleCmp = angleA.CompareTo(angleB);
+                    int angleCmp = angleB.CompareTo(angleA);
                     if (angleCmp != 0)
                         return angleCmp;
 
@@ -187,7 +187,7 @@ namespace CG_indiv
                 stackSteps.Clear();
                 var stack = new Stack<PointF>();
 
-                // Добавляем первые две точки (S0 и S1) — они всегда в оболочке
+                // Добавляем первые две точки (S0 и S1)
                 stack.Push(sorted[0]);
                 stack.Push(sorted[1]);
 
@@ -205,14 +205,13 @@ namespace CG_indiv
                         PointF si = stack.Pop();        // Si — последняя в стеке
                         PointF si_1 = stack.Peek();     // Si-1 — предпоследняя
 
-                        // Ориентация: > 0 → левый поворот (nextPoint слева от луча si_1 → si)
-                        // ≤ 0 → не слева (коллинеарна или справа) → удаляем Si
-                        if (Orientation(si_1, si, nextPoint) > 0)
+                        
+                        if (Orientation(si_1, si, nextPoint) < 0)
                         {
-                            stack.Push(si); // восстанавливаем si — поворот левый, оставляем
+                            stack.Push(si); 
                             break;
-                        }
-                        // Иначе: si удалена, продолжаем цикл (теперь проверяем луч si-2 → si-1)
+                        } 
+                        
                     }
 
                     // Добавляем nextPoint (Si+1) в стек
